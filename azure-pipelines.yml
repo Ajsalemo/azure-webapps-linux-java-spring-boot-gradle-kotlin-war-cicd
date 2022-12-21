@@ -76,3 +76,4 @@ stages:
               appName: $(webAppName)
               package: '$(Pipeline.Workspace)/drop/**/build/libs/azure-0.0.1-SNAPSHOT.war'
               customDeployFolder: 'ROOT'
+              appSettings: -CATALINA_OPTS '-Dsome=value -Dfoo=bar'
