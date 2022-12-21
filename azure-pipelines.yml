@@ -74,4 +74,4 @@ stages:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
               appName: $(webAppName)
-              package: '$(Pipeline.Workspace)/drop/**/build/libs/azure-0.0.1-SNAPSHOT.war)'
+              package: '$(Pipeline.Workspace)/drop/**/build/libs/azure-0.0.1-SNAPSHOT.war'
