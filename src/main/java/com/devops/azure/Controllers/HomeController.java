@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HomeController {
-    String message = "azure-webapps-linux-java-tomcat-war-devops-gradle";
+    String message = "Hello, world! From a war file built with Gradle and deployed with Azure DevOps";
 
     @GetMapping("/")
     public String index() {
