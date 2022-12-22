@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: java-app
-          path: '${{ github.workspace }}/build/libs/*.war'
+          path: '${{ github.workspace }}/build/libs/azure-0.0.1-SNAPSHOT.war'
 
   deploy:
     runs-on: ubuntu-latest
@@ -52,4 +52,4 @@ jobs:
           app-name: 'ansalemo-ghactions-sb-gradle'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_876380594F3443CDA8F318BD55092819 }}
-          package: '*.war'
+          package: 'azure-0.0.1-SNAPSHOT.war'
