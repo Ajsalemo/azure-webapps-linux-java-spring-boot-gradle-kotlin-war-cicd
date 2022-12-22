@@ -21,14 +21,16 @@ jobs:
         with:
           java-version: '17'
 
-      - name: Build with Maven
-        run: mvn clean install
+      # This is the important change we need to make to switch between Maven to Gradle
+      # Gradle is available on these runners through typical [CLI commands](https://docs.gradle.org/current/userguide/command_line_interface.html)
+      - name: Build with Gradle
+        run: gradle build
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.war'
+          path: '${{ github.workspace }}/build/libs/*.war'
 
   deploy:
     runs-on: ubuntu-latest
