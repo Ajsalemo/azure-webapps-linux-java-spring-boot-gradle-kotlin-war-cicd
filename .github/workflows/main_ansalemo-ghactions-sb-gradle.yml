@@ -45,6 +45,9 @@ jobs:
         with:
           name: java-app
 
+      - name: Rename war to ROOT
+        run: mv azure-0.0.1-SNAPSHOT.war ROOT.war
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
@@ -52,4 +55,4 @@ jobs:
           app-name: 'ansalemo-ghactions-sb-gradle'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_876380594F3443CDA8F318BD55092819 }}
-          package: 'azure-0.0.1-SNAPSHOT.war'
+          package: 'ROOT.war'
