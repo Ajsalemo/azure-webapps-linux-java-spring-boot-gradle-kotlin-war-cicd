@@ -54,7 +54,7 @@ jobs:
 
       - uses: azure/appservice-settings@v1
         with:
-          app-name: 'myapp'
+          app-name: 'ansalemo-ghactions-sb-gradle'
           app-settings-json: '[{ "name": "CATALINA_OPTS", "value": "-Dfoo=bar" }]' 
 
       - name: Deploy to Azure Web App
